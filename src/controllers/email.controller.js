@@ -1,4 +1,4 @@
-import { firstEmailProvider } from "../emailtest/firstEmailProvider";
+import { firstEmailProvider } from "../emailProviders/firstEmailProvider";
 
 export const sendEmail = async (req, res) => {
     try{

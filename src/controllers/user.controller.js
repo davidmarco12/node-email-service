@@ -1,6 +1,6 @@
-import { sendEmail } from "../emailtest/firstEmailProvider";
+import { sendEmail } from "../emailProviders/firstEmailProvider";
 import { User } from "../libs/config"
-import { sendSecondEmail } from "../emailtest/secondEmailProvider";
+import { sendSecondEmail } from "../emailProviders/secondEmailProvider";
 
 export const getUsers = async (req, res) => {
     try{
