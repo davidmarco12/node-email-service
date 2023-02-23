@@ -4,7 +4,10 @@ on:
   # but only for the master branch
   push:
     branches:
-      - dev
+      - feature
+  pull_request:
+    branches:
+      - develop
 
 jobs:
   build:
