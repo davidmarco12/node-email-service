@@ -21,4 +21,6 @@ export const MAILGUNSERVICE = process.env.MAILGUNSERVICE;
 
 export const MAILGUNDOMAIN = process.env.MAILGUNDOMAIN;
 
+export const SECRET_JWT = process.env.SECRET_JWT
+
 
