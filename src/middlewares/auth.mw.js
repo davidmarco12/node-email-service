@@ -52,7 +52,7 @@ export const isAdmin = async (req, res, next) => {
     }catch(e){
         return res.status(403).json({
             message: e
-        })
+        });
     }
     
 }
