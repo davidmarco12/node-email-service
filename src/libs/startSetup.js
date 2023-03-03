@@ -22,5 +22,3 @@ export const initialize = async () => {
         console.log(e)
     }
 };
-
-initialize();

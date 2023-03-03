@@ -1,10 +1,16 @@
 FROM node:alpine
 
-WORKDIR /app
+ARG NODE_ENV=development
+ENV NODE_ENV=${NODE_ENV}
 
-COPY package*.json .
+WORKDIR /usr/src/app
 
-RUN npm ci
+RUN npm install i npm@latest -g
+
+COPY package.json package-lock*.json ./
+
+RUN npm ci 
+# RUN npm install -g nodemon
 
 COPY . .
 
