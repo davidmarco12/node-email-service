@@ -3,14 +3,14 @@ import jwt from "jsonwebtoken";
 import { SECRET_JWT } from "../constants";
 
 export const signUp = async (req, res) => {
-    const {username, password} = req.body;
+    const {username, password, email} = req.body;
     const findUser = await User.findAll({
         where: {
             username,
         }
     })
     if(findUser.length > 0 ){
-        return res.status(200).json({
+        return res.status(303).json({
             message:"username already exists, please use another username"
         });
     }
@@ -18,7 +18,7 @@ export const signUp = async (req, res) => {
     const newUser = await User.create({
         username, 
         password,
-        email:"d3xuscs.com",
+        email,
         role : "user"
     });
 
@@ -27,6 +27,7 @@ export const signUp = async (req, res) => {
     });
     res.status(200).json({
         message:"user created",
+        username: newUser.username,
         auth_token: token
     })
 }

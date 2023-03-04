@@ -6,7 +6,9 @@ export const verify = async (req, res, next) => {
         const token = req.headers['authorization'];
     
         if(!token){
-            throw new Error("Access denied");
+            return res.status(403).json({
+                message: "Forbidden Error"
+            });
         }
     
         const decoded = jwt.verify(token, SECRET_JWT);
@@ -17,12 +19,16 @@ export const verify = async (req, res, next) => {
         });
         req.userId = decoded.id;
         if(!verifyUser.length > 0 ){
-            throw new Error("Access denied");
+            return res.status(403).json({
+                message: "Forbidden Error"
+            });
         }
         next();
+        
     }catch(e){
+        console.log(e)
         return res.status(403).json({
-            message: e
+            message: "Forbidden Error"
         });
     }
 }
@@ -32,7 +38,7 @@ export const isAdmin = async (req, res, next) => {
         const id = req.userId;
         if(!id){
             return res.status(403).json({
-                message: "Unauthorized"
+                message: "Forbidden Error"
             });
         }
 
@@ -42,14 +48,19 @@ export const isAdmin = async (req, res, next) => {
             }
         });
 
-        if(!user.length > 0 ) throw new Error("Access denied");
+        if(!user.length > 0 ) return res.status(403).json({
+            message: "Forbidden Error"
+        });
 
         const isAdmin = user[0]?.role === "admin";
 
-        if(!isAdmin) throw new Error("Access denied");
+        if(!isAdmin) return res.status(403).json({
+            message: "Forbidden Error"
+        });
 
         next();
     }catch(e){
+        console.log(e)
         return res.status(403).json({
             message: e
         });

@@ -3,7 +3,7 @@ import { User } from "./config"
 
 export const initialize = async () => {
     try{
-        const admin = User.findAll({
+        const admin = await User.findAll({
             where:{
                 username: ADMIN_USERNAME
             }
