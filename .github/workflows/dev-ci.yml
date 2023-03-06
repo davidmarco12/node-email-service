@@ -60,19 +60,11 @@ jobs:
           cache: 'npm'
       
       - run: |
-          DB_USER=$DB_USER
-          DB_PASSWORD=$DB_PASSWORD
-          DB_NAME=$DB_NAME
-          DB_HOST=$DB_HOST
-          DB_PORT=$DB_PORT
-          SENDGRIDSERVICE=$SENDGRIDSERVICE
-          MAILGUNSERVICE=$MAILGUNSERVICE
-          MAILGUNDOMAIN=$MAILGUNDOMAIN
-          SECRET_JWT=$SECRET_JWT
           npm ci
           npm run test
   deploy:
     name: Deploy to FLY.IO
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

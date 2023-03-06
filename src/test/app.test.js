@@ -1,8 +1,8 @@
-import request from "supertest";
+import request from 'supertest';
 import app from "../app";
 import * as models from "../libs/config"
 
-const randonNumber =  Math.floor(Math.random() * 99) + 99;
+const randonNumber = Math.floor(Math.random() * 99) + 99;
 
 const email = {
     to:"d3xuscs@gmail.com",
@@ -40,7 +40,6 @@ describe('Sending an email', () => {
         .post("/api/auth/signin")
         .set("Accept", "application/json")
         .send(newUser);
-        console.log({responseUser})
         const token = responseUser.body.token;
         const responseEmail = await request(app)
         .post("/api/email")
