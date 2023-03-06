@@ -60,19 +60,19 @@ jobs:
           MAILGUNSERVICE=$MAILGUNSERVICE
           MAILGUNDOMAIN=$MAILGUNDOMAIN
           SECRET_JWT=$SECRET_JWT
-      - run: npm ci
-      - run: npm run test
-      env:
-        DB_USER:${{secrets.DB_USER}}
-        DB_PASSWORD:${{secrets.DB_PASSWORD}}
-        DB_NAME:${{secrets.DB_NAME}}
-        DB_HOST:${{secrets.DB_HOST}}
-        DB_PORT:${{secrets.DB_PORT}}
-        SERVER_HOST:${{secrets.SERVER_HOST}}
-        SERVER_PORT:${{secrets.SERVER_PORT}}
-        PROJECT_MODE:${{secrets.PROJECT_MODE}}
-        SENDGRIDSERVICE:${{secrets.SENDGRIDSERVICE}}
-        MAILGUNSERVICE:${{secrets.MAILGUNSERVICE}}
-        MAILGUNDOMAIN:${{secrets.MAILGUNDOMAIN}}
-        SECRET_JWT:${{secrets.SECRET_JWT}}
+          npm ci
+          npm run test
+        env:
+          DB_USER:${{secrets.DB_USER}}
+          DB_PASSWORD:${{secrets.DB_PASSWORD}}
+          DB_NAME:${{secrets.DB_NAME}}
+          DB_HOST:${{secrets.DB_HOST}}
+          DB_PORT:${{secrets.DB_PORT}}
+          SERVER_HOST:${{secrets.SERVER_HOST}}
+          SERVER_PORT:${{secrets.SERVER_PORT}}
+          PROJECT_MODE:${{secrets.PROJECT_MODE}}
+          SENDGRIDSERVICE:${{secrets.SENDGRIDSERVICE}}
+          MAILGUNSERVICE:${{secrets.MAILGUNSERVICE}}
+          MAILGUNDOMAIN:${{secrets.MAILGUNDOMAIN}}
+          SECRET_JWT:${{secrets.SECRET_JWT}}
 
