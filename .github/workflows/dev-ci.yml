@@ -5,7 +5,6 @@ on:
   # but only for the master branch
   push:
     branches:
-      - feature
       - main
   pull_request:
     branches:
@@ -26,7 +25,7 @@ env:
 
 jobs:
   build:
-
+    name: Build
     runs-on: ubuntu-latest
 
     strategy:
@@ -44,6 +43,7 @@ jobs:
     - run: npm run build --if-present
 
   test:
+    name: Run tests
     needs: build
 
     runs-on: ubuntu-latest
@@ -71,6 +71,13 @@ jobs:
           SECRET_JWT=$SECRET_JWT
           npm ci
           npm run test
-      
+  deploy:
+    name: Deploy to FLY.IO
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --remote-only
+
         
 
