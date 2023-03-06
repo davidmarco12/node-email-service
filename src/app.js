@@ -3,6 +3,7 @@ import morgan from "morgan";
 import userRoutes from "./routes/users.routes";
 import authRoutes from "./routes/auth.routes";
 import emailRoutes from "./routes/email.routes"
+import statRoutes from "./routes/stats.routes";
 
 //swagger
 import swaggerUI from "swagger-ui-express";
@@ -16,9 +17,9 @@ app.use(express.json());
 
 const specs = swaggerJsDoc(options);
 
-app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/email", emailRoutes);
+app.use("/api/stats", statRoutes);
 app.use("/api/docs", swaggerUI.serve, swaggerUI.setup(specs));
 
 export default app;
