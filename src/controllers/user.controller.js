@@ -1,20 +1,9 @@
-import { sendEmail } from "../emailtest/firstEmailProvider";
-import { User } from "../libs/config"
-import { sendSecondEmail } from "../emailtest/secondEmailProvider";
 
 export const getUsers = async (req, res) => {
     try{
-        // const msg = {
-        //     to: "d3xuscs@gmail.com",
-        //     from: "d3xuscs@gmail.com", // Change to your verified sender
-        //     subject:"any",
-        //     text:"testing",
-        // }    
-        // const users = await sendEmail(msg);
-        //const response = await sendSecondEmail(msg);
         res.json({
             status: 200,
-            message:response
+            message:"response"
         });
     }catch(error){
         console.log(error)
