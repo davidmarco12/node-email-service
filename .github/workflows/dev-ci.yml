@@ -1,18 +1,18 @@
 name: Email Service Github Action CI Develop
 
 env:
-  DB_USER:${{env.DB_USER}}
-  DB_PASSWORD:${{env.DB_PASSWORD}}
-  DB_NAME:${{env.DB_NAME}}
-  DB_HOST:${{env.DB_HOST}}
-  DB_PORT:${{env.DB_PORT}}
-  SERVER_HOST:${{env.SERVER_HOST}}
-  SERVER_PORT:${{env.SERVER_PORT}}
-  PROJECT_MODE:${{env.PROJECT_MODE}}
-  SENDGRIDSERVICE:${{env.SENDGRIDSERVICE}}
-  MAILGUNSERVICE:${{env.MAILGUNSERVICE}}
-  MAILGUNDOMAIN:${{env.MAILGUNDOMAIN}}
-  SECRET_JWT:${{env.SECRET_JWT}}
+  DB_USER:${{secrets.DB_USER}}
+  DB_PASSWORD:${{secrets.DB_PASSWORD}}
+  DB_NAME:${{secrets.DB_NAME}}
+  DB_HOST:${{secrets.DB_HOST}}
+  DB_PORT:${{secrets.DB_PORT}}
+  SERVER_HOST:${{secrets.SERVER_HOST}}
+  SERVER_PORT:${{secrets.SERVER_PORT}}
+  PROJECT_MODE:${{secrets.PROJECT_MODE}}
+  SENDGRIDSERVICE:${{secrets.SENDGRIDSERVICE}}
+  MAILGUNSERVICE:${{secrets.MAILGUNSERVICE}}
+  MAILGUNDOMAIN:${{secrets.MAILGUNDOMAIN}}
+  SECRET_JWT:${{secrets.SECRET_JWT}}
 
 
 on:
@@ -58,9 +58,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
       
       - run: npm ci
       - run: npm run test
