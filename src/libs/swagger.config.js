@@ -1,4 +1,4 @@
-import { SERVER_PORT, SERVER_HOST } from "../constants"
+import { SERVER_PORT, SERVER_HOST, DOMAIN } from "../constants"
 
 export const options = {
     definition: {
@@ -10,7 +10,7 @@ export const options = {
         },
         servers: [
             {
-                url: SERVER_HOST+":"+SERVER_PORT,
+                url: DOMAIN || SERVER_HOST+":"+SERVER_PORT,
             }
         ]
     },
