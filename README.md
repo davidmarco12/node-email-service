@@ -1,19 +1,22 @@
 # Sirius Backend Challenge
 
-1) Requeriments:
-    Docker / Docker Desktop
+## Requeriments:
+    - Docker / Docker Desktop
 
-Instalation:
+## Installation:
+ - Pull the repository
+ - Create an .env and copy the template from .env.example
+ - Run the above  commands on the terminal
+```
+docker-compose build
+docker-compose run app
+```
+- Go to ```/api/auth/signup``` and create an user, will give you a token so you can use it for the API.
 
-    1) Create an .env and copy the template from .env.example
-    ```
-    docker-compose build
-    docker-compose run app
-    ```
-    2) Go to /api/auth/signup and create an user, will give you a token so you can use it for the API.
-
-API:
-    /api/auth/signup
-    /api/auth/signin
-    /api/stats
-    /api/email/
+## API:
+```
+    GET :  /api/stats/
+    POST : /api/auth/signup/
+    POST : /api/auth/signin/
+    POST : /api/email/
+```
