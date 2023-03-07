@@ -17,6 +17,8 @@ export const DB_NAME = process.env.DB_NAME;
 
 export const DB_HOST = process.env.DB_HOST;
 
+export const DOMAIN = process.env.DOMAIN;
+
 export const SENDGRIDSERVICE = process.env.SENDGRIDSERVICE;
 
 export const MAILGUNSERVICE = process.env.MAILGUNSERVICE;
