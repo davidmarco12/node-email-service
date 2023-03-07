@@ -35,22 +35,18 @@ const router = Router();
  *                                  message:
  *                                      type: object
  *                                      properties:
- *                                          userName
+ *                                          userName:
  *                                              type: string
- *                                              example:
- *                                                  davidmarco21
- *                                          userEmail
+ *                                              example: davidmarco21
+ *                                          userEmail:
  *                                              type: string
- *                                              example:
- *                                                  davidmarcolin@gmail.com
- *                                          countEmail
+ *                                              example: davidmarcolin@gmail.com
+ *                                          countEmail:
  *                                              type: integer
- *                                              example:
- *                                                  21
- *                                          dateSend
+ *                                              example: 21
+ *                                          dateSend:
  *                                              type: string
- *                                              example:
- *                                                  2023-06-07
+ *                                              example: 2023-06-07
  *
  */
 router.get('/', verify, isAdmin, getUsersByDate);
