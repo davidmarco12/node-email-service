@@ -3,54 +3,45 @@ import { getUsersByDate } from "../controllers/stats.controller";
 import { isAdmin, verify } from "../middlewares/auth.mw";
 const router = Router();
 
-
-
-
 /**
  * @swagger
+ *
  * /api/stats:
- *  post:
+ *  get:
  *      summary: Give a list of users with email send.
+ *      security:
+ *       - apiKeyAuth: []
  *      tags:
  *          - Stats
- *      requestBody:
- *              required: true
- *              content:
- *                  application/json:
- *                      schema:
- *                          type: object
- *                          properties:
- *                              date:
- *                                  type: string
- *                                  example: 2023-06-07
- *         
+ *      parameters:
+ *          - in: query
+ *            name: date
+ *            schema:
+ *              type: string
+ *            description: Date
+ *
  *      responses:
  *              '200':
- *                  description: response with a success message
+ *                  description: list of users
  *                  content:
  *                      application/json:
  *                          schema:
- *                              type: object
- *                              properties:
- *                                  message:
- *                                      type: object
- *                                      properties:
- *                                          userName:
- *                                              type: string
- *                                              example: davidmarco21
- *                                          userEmail:
- *                                              type: string
- *                                              example: davidmarcolin@gmail.com
- *                                          countEmail:
- *                                              type: integer
- *                                              example: 21
- *                                          dateSend:
- *                                              type: string
- *                                              example: 2023-06-07
- *
+ *                              type: array
+ *                              items:
+ *                                   properties:
+ *                                      idUser:
+ *                                          type: string
+ *                                          example: aj23jhasd7978230-asdie-29387dshjas
+ *                                      userName:
+ *                                          type: string
+ *                                          example: admin
+ *                                      lastDateSend:
+ *                                          type: string
+ *                                          example: 2023-06-06
+ *                                      emailNum:
+ *                                          type: integer
+ *                                          example: 5
  */
-router.get('/', verify, isAdmin, getUsersByDate);
-
-
+router.get("/", verify, isAdmin, getUsersByDate);
 
 export default router;

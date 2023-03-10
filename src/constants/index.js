@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
 
 export const PROJECT_MODE = process.env.PROJECT_MODE;
@@ -25,10 +25,8 @@ export const MAILGUNSERVICE = process.env.MAILGUNSERVICE;
 
 export const MAILGUNDOMAIN = process.env.MAILGUNDOMAIN;
 
-export const SECRET_JWT = process.env.SECRET_JWT
+export const SECRET_JWT = process.env.SECRET_JWT;
 
 export const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
 
 export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin";
-
-

@@ -1,8 +1,8 @@
 import express from "express";
 import morgan from "morgan";
-import cors from "cors"
+import cors from "cors";
 import authRoutes from "./routes/auth.routes";
-import emailRoutes from "./routes/email.routes"
+import emailRoutes from "./routes/email.routes";
 import statRoutes from "./routes/stats.routes";
 
 //swagger
@@ -12,7 +12,7 @@ import { options } from "./libs/swagger.config";
 
 const app = express();
 
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
 

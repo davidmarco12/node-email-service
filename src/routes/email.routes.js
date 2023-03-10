@@ -3,15 +3,11 @@ import { sendEmail } from "../controllers/email.controller";
 import { verify } from "../middlewares/auth.mw";
 const router = Router();
 
-
-
-
-
 /**
  * @swagger
  * /api/email/:
  *  post:
- *      summary: Send an Email.
+ *      summary: Send an Email. please use d3xuscs@gmail.com as from
  *      tags:
  *          - Email
  *      requestBody:
@@ -28,8 +24,8 @@ const router = Router();
  *                              subject:
  *                                  type: string
  *                              text:
- *                                  type: string 
- *         
+ *                                  type: string
+ *
  *      responses:
  *              '200':
  *                  description: response with a success message
@@ -43,8 +39,6 @@ const router = Router();
  *                                      example: Email send
  *
  */
-router.post('/', verify, sendEmail);
-
-
+router.post("/", verify, sendEmail);
 
 export default router;

@@ -21,7 +21,9 @@ const router = Router();
  *                                  type: string
  *                              password:
  *                                  type: string
- *         
+ *                              email:
+ *                                  type: string
+ *
  *      responses:
  *              '200':
  *                  description: response with a json token
@@ -36,10 +38,7 @@ const router = Router();
  *                                      type: string
  *
  */
-router.post('/signup', signUp);
-
-
-
+router.post("/signup", signUp);
 
 /**
  * @swagger
@@ -59,7 +58,7 @@ router.post('/signup', signUp);
  *                                  type: string
  *                              password:
  *                                  type: string
- *         
+ *
  *      responses:
  *              '200':
  *                  description: response with a json token
@@ -74,6 +73,6 @@ router.post('/signup', signUp);
  *                                      type: string
  *
  */
-router.post('/signin', signIn);
+router.post("/signin", signIn);
 
 export default router;
