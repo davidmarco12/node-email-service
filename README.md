@@ -15,6 +15,7 @@ docker-compose run app
 
 ## API:
 ```
+    SWAGGER: /api/docs
     GET :  /api/stats/
     POST : /api/auth/signup/
     POST : /api/auth/signin/
