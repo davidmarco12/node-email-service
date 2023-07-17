@@ -1,4 +1,4 @@
-# Sirius Backend Challenge
+# Backend Challenge
 
 ## Requeriments:
     - Docker / Docker Desktop
